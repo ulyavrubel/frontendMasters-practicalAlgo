@@ -1,6 +1,6 @@
 //Devide and conqure - recursive strategy to devide problem into smaller parts
 
-//linear search
+//linear search - loop through all items of the array untill the needed is found
 
 function linearSearch(list, item) {
     for (let i = 0; i < list.length; i++) {
@@ -8,11 +8,14 @@ function linearSearch(list, item) {
         return i;
     }
     return -1;
-  }
+}
   
-  // linearSearch([2,6,7,90,130], 6)
+linearSearch([2,6,7,90,130], 6)
+
+// binarySearch - having a sorted array start with the middle item if searched item is less - go to the left,
+// else go to the right an do the same thing
   
-  function binarySearch(list, item) {
+function binarySearch(list, item) {
     var min = 0;//1
     var max = list.length - 1;//1
     var guess;
@@ -32,7 +35,7 @@ function linearSearch(list, item) {
     }
   
     return -1;
-  }
+}
    
   // binarySearch([2,6,7,90,130], 6)
   
