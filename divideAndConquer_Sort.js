@@ -63,3 +63,42 @@
   }
   
   console.log(mergeSort([3, 5, 1, 9, 2, 7, 6]));
+
+//insertion sort - selecting the element at the current index, i, and searches from right-to-left for the correct place to place the item.
+
+function insertionSort(list) {
+  for (let i = 1; i < list.length; i++) {
+    let j = i - 1;
+    let item = list[i];
+    
+    while (j >= 0 && list[j] > item) {
+      list[j + 1] = list[j];
+      j--;
+    }
+    list [j + 1] = item;
+  }
+
+  return list;
+}
+
+//selection sort
+//compare array items with the first item, if the item is smaller place it to the beginning
+
+function swap(list, i, j) {
+  [list[i], list[j]] = [list[j], list[i]];
+}
+
+function selectionSort(list) {
+  for (let i = 0; i < list.length; i++) {
+    let min = i;
+
+    for (let j = i+1; j < list.length; j++) {
+      if (list[j] < list[min])
+        min = j;
+    }
+
+    if (i != min)
+      swap(list, i, min);
+  }
+  return list;
+}
